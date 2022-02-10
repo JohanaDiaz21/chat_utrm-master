@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-       HOME
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+
+      <ion-title>
+        <img src="./assets/home.png" height="40" width="40"> HOME
+      </ion-title>
+
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
 
-  <div id="container">
-    <strong>BIENVENIDO AL CHAT UTRM</strong>
+  <ion-row>
+    <ion-col>
+      <ion-card no-margin margin-bottom class="full-width">
 
-  </div>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="people" slot="start"></ion-icon>
+            <h2 ion-text color="dark">Bienvenido al Chat-Utrm</h2>
+            <img src="./assets/mensaje.png" height="60" width="40">
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+
 </ion-content>
+
+
+
+
+
+
+
