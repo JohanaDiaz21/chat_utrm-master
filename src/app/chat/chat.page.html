@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-toolbar color="success">
+      <ion-title>
+        Chateando...
+        <ion-input placeholder="¿Quién eres?" [(ngModel)]="userName"></ion-input>
+      </ion-title>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #content padding id="content">
+  <ion-card *ngFor="let message of messages">
+    <ion-card-header>
+      {{message.nombre}} dice:
+    </ion-card-header>
+    <ion-card-content>
+      {{message.mensaje}}
+    </ion-card-content>
+  </ion-card>
+  <div id="content-end"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-toolbar color="secondary">
+
+      <ion-input placeholder="escribe algo..." [(ngModel)]="message"></ion-input>
+      <ion-buttons end>
+        <button ion-button icon-right (click)="sendMessage()">
+          Enviar
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+<div class="container">
+  <img src="/assets/bandmember.jpg" alt="Avatar">
+  <p>Hola</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="/assets/avatar_g2.png" alt="Avatar" class="right">
+  <p>Hola</p>
+  <span class="time-left">11:01</span>
+</div>
+
+
+
