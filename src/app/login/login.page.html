@@ -36,10 +36,9 @@
     <br/>
     <input type="password" name="password" required [(ngModel)]="password" placeholder="Contraseña">
   </form>
-  <a href="#" class="link">
+  <a href="#" class="link""redirect('/forgot-password')">
     Olvidaste tu contraseña!
   </a>
-  <br/>
   <button [routerLink]="['/registro']" class="register" >
     <span>register</span>
   </button>
@@ -51,6 +50,11 @@
   <div class="reg"></div>
   <div class="sig"></div>
 
-
+  <ion-row>
+    <ion-col>
+      <a class="small-text" (click)="redirect('/forgot-password')">Forgot Password?</a>
+    </ion-col>
+  </ion-row>
 
 </div>
+
