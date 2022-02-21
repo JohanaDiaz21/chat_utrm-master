@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class LoginPage {
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  Inciar() {
+    this.router.navigate(['/tabs/home']);
+  }
+
+  Registro() {
+    this.router.navigate(['/tabs/registro']);
+  }
 
 }

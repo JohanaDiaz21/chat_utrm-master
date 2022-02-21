@@ -15,11 +15,12 @@ export class ListadeusuariosPage implements OnInit {
   }
 
   gotohome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/tabs/home']);
   }
   gotochat() {
-    this.router.navigate(['/chat']);
+    this.router.navigate(['/tabs/chat']);
   }
 
 
 }
+
