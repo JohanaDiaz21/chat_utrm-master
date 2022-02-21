@@ -32,15 +32,15 @@
 <div class="container">
   <h2>login</h2>
   <form>
-    <input type="text" class="email" placeholder="email">
+    <input type="text"required name="email" [(ngModel)]="email" placeholder="Correo">
     <br/>
-    <input type="text" class="pwd" placeholder="password">
+    <input type="password" name="password" required [(ngModel)]="password" placeholder="Contraseña">
   </form>
   <a href="#" class="link">
-    forgot your password?
+    Olvidaste tu contraseña!
   </a>
   <br/>
-  <button (click)="Registro()" class="register" >
+  <button [routerLink]="['/registro']" class="register" >
     <span>register</span>
   </button>
   <button (click)="Inciar()"class="signin">

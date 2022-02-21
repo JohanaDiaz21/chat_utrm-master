@@ -8,14 +8,11 @@ import {Router} from '@angular/router';
 })
 export class LoginPage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   Inciar() {
     this.router.navigate(['/tabs/home']);
   }
-
-  Registro() {
-    this.router.navigate(['/tabs/registro']);
-  }
-
 }
+
