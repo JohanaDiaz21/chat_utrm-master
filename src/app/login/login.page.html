@@ -34,11 +34,9 @@
   <form>
     <input type="text"required name="email" [(ngModel)]="email" placeholder="Correo">
     <br/>
-    <input type="password" name="password" required [(ngModel)]="password" placeholder="Contraseña">
+    <input type="password" name="password" required [(ngModel)]="password"placeholder="Contraseña">
   </form>
-  <a href="#" class="link""redirect('/forgot-password')">
-    Olvidaste tu contraseña!
-  </a>
+
   <button [routerLink]="['/registro']" class="register" >
     <span>register</span>
   </button>
@@ -49,12 +47,12 @@
   <h3>your sign in is complete !</h3>
   <div class="reg"></div>
   <div class="sig"></div>
+  <br>
+  <a href="./src/app/forgot-password" class="link">
+    Olvidaste tu contraseña!
+  </a>
+  <br/>
 
-  <ion-row>
-    <ion-col>
-      <a class="small-text" (click)="redirect('/forgot-password')">Forgot Password?</a>
-    </ion-col>
-  </ion-row>
+
 
 </div>
-
