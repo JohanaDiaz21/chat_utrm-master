@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UserServiceGuard } from './auth_guards/user-service.guard';
+
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule )
   },
   {
     path: 'listadeusuarios',
@@ -22,9 +25,16 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+
   {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    path: '',
+    canActivate: [UserServiceGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+      }
+    ]
   }
 ];
 @NgModule({
