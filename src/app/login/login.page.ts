@@ -9,34 +9,31 @@ import {UserServiceService} from 'src/app/services/user-service.service';
   templateUrl: 'login.page.html',
   styleUrls: ['login.page.scss']
 })
-export class LoginPage implements OnInit{
+export class LoginPage implements OnInit {
   public email: string;
   public password: string;
 
   constructor(
-    private router: Router ,
+    private router: Router,
     public alertController: AlertController,
-   private userService:UserServiceService ) {
+    private userService: UserServiceService) {
   }
+
   ngOnInit() {
   }
+
   redirect(url) {
     this.router.navigateByUrl(url);
   }
-
-  Inciar() {
-    this.router.navigate(['/tabs/home']);
-  }
-
-  async signIn(key: string){
+  async signIn(){
     console.log(this.email, this.password);
     if(this.email === 'admin' && this.password === '123'){
-      localStorage.getItem(this.userService.JWToken, );
       this.redirect('/login');
     } else {
       await this.presentAlert('Error', '', 'User not found');
     }
   }
+
 
   async presentAlert(h: string, subtitle: string, msn: string) {
     const alert = await this.alertController.create({
