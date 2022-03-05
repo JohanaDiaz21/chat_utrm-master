@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {UserServiceService}from'../services/user-service.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +7,18 @@ import {Router} from '@angular/router';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
+  public user= {
+    username: '',
+    email: '',
+    password: ''
+  };
 
-  constructor() { }
+  constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
+  }
+  async createUser(){
+    const query = await this.userService.createUser(this.user);
+    console.log(query);
   }
 }
